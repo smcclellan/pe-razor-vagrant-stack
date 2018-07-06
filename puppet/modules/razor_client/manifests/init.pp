@@ -1,6 +1,6 @@
 class razor_client {
 
-  package { 'pe-razor-client' :
+  package { 'razor-client' :
     ensure   => present,
     provider => puppet_gem,
   }
@@ -13,7 +13,7 @@ class razor_client {
   file { '/usr/bin/razor' :
     ensure  => link,
     target  => '/opt/puppetlabs/puppet/bin/razor',
-    require => Package['pe-razor-client'],
+    require => Package['razor-client'],
   }
 
 }
